@@ -2,6 +2,8 @@ param(
     [ValidateSet('release', 'debug', 'release-vr')]
     [string]$Preset = 'release',
 
+    [switch]$RunTests,
+
     [switch]$NoPause
 )
 
@@ -91,6 +93,11 @@ try {
     }
 
     Invoke-NativeCommand cmake --build --preset $Preset --target stage_mod
+
+    if ($RunTests) {
+        Invoke-NativeCommand cmake --build --preset $Preset --target DialogueHUDFadeTests
+        Invoke-NativeCommand ctest --preset $Preset
+    }
 
     if (-not (Test-Path -LiteralPath $StageRoot)) {
         throw "Stage directory was not created: $StageRoot"

@@ -21,6 +21,7 @@
         "VCPKG_TARGET_TRIPLET": "x64-windows-static-md",
         "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "BUILD_TESTING": "ON",
         "DHF_BUILD_PLUGIN": "ON"
       }
     },
@@ -47,6 +48,20 @@
       "cacheVariables": {
         "DHF_VR_ONLY": "ON"
       }
+    },
+    {
+      "name": "tests-only",
+      "displayName": "Tests Only",
+      "generator": "Visual Studio 18 2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON",
+        "DHF_BUILD_PLUGIN": "OFF"
+      }
     }
   ],
   "buildPresets": [
@@ -64,6 +79,29 @@
       "name": "release-vr",
       "configurePreset": "release-vr",
       "configuration": "Release"
+    },
+    {
+      "name": "tests-only",
+      "configurePreset": "tests-only",
+      "configuration": "Debug"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "configuration": "Release",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "tests-only",
+      "configurePreset": "tests-only",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
     }
   ]
 }
