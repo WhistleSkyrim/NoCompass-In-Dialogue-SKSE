@@ -68,7 +68,7 @@ if(DHF_BUILD_PLUGIN)
     install(FILES README.md LICENSE DESTINATION .)
 
     set(DHF_DIST_DIR "${PROJECT_SOURCE_DIR}/dist")
-    set(DHF_ZIP_PATH "${PROJECT_SOURCE_DIR}/NoCompass-End-Dialog-SKSE-v${PROJECT_VERSION}.zip")
+    set(DHF_ZIP_PATH "${PROJECT_SOURCE_DIR}/NoCompass-In-Dialogue-SKSE-v${PROJECT_VERSION}.zip")
 
     add_custom_target(stage_mod
         COMMAND "${CMAKE_COMMAND}" -E rm -rf "${DHF_DIST_DIR}"
