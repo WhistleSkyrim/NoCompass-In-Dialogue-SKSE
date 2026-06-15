@@ -1,6 +1,6 @@
-# NoCompass End Dialog SKSE
+# No Compass in Dialogue
 
-NoCompass End Dialog SKSE is a lightweight SKSE plugin for Skyrim that fades the vanilla HUD, including the compass, while the Dialogue Menu is open and restores it when dialogue ends.
+No Compass in Dialogue SKSE is a lightweight SKSE plugin for Skyrim that fades the vanilla HUD, including the compass, while the Dialogue Menu is open and restores it when dialogue ends.
 
 The mod is built for dialogue camera, cinematic letterbox, and minimal-HUD setups where compass or HUD elements can overlap conversations. It contains no ESP/ESL/ESM plugin, no Papyrus scripts, no MCM, and no SWF files.
 
