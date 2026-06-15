@@ -1,0 +1,10 @@
+build/
+install/
+dist/
+Output/
+*.zip
+*.user
+*.suo
+*.VC.db
+*.opensdf
+*.pdb
